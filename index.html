@@ -6,24 +6,23 @@
 	<script>
 		// TODO: create a handler
 		window.addEventListener("load", function () {
-			// TODO: register the handler
-			let form = document.querySelector("form");
-			form.addEventListener("submit", function setSearchEngine() {
-				let engine = document.querySelector("input[name=engine]:checked");
-			    
-
-				let actions = {
+			let actions = {
 					"google": "https://www.google.com",
 					"duckduckgo": "https://www.duckduckgo.com",
 					"bing": "https://www.bing.com",
 					"ask": "https://www.ask.com"
 				}
-
+			// TODO: register the handler
+			let form = document.querySelector("form");
+			form.addEventListener("submit", function setSearchEngine() {
+				let engine = document.querySelector("input[name=engine]:checked");
+ 
+				console.log(engine);
+				if(engine == null){
+					alert("please select a search engine");
+				} else {
 				form.setAttribute("action", actions[engine.value]);
-				// let searchEngine = document.querySelector("input[name=engine]");
-				// if(searchEngine = ""){
-				// 	alert("please select a search engine");
-				// }
+				}
 			});
 		});
 	</script>
