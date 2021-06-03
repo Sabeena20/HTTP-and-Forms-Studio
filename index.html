@@ -10,6 +10,7 @@
 			let form = document.querySelector("form");
 			form.addEventListener("submit", function setSearchEngine() {
 				let engine = document.querySelector("input[name=engine]:checked");
+			    
 
 				let actions = {
 					"google": "https://www.google.com",
@@ -19,14 +20,18 @@
 				}
 
 				form.setAttribute("action", actions[engine.value]);
-			})
+				// let searchEngine = document.querySelector("input[name=engine]");
+				// if(searchEngine = ""){
+				// 	alert("please select a search engine");
+				// }
+			});
 		});
 	</script>
 </head>
 
 <body>
 	<form action="">
-		<input type="text" name="q">
+		<input type="text" name="q" required>
 		<label>Google<input type="radio" name="engine" value="google" /></label>
 		<label>DuckDuckGo<input type="radio" name="engine" value="duckduckgo" /></label>
 		<label>Bing<input type="radio" name="engine" value="bing" /></label>
